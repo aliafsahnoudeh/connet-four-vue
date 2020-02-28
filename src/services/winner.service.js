@@ -25,12 +25,24 @@ const WinnerService = {
             // down & left
             (await this.goDiagonally(cells, cell, -1, -1))
           ) {
-            await store.dispatch("winner/setWinner");
+            await store.dispatch(
+              "winner/setWinner",
+              await this.detectPlayerByColor(cell.color)
+            );
             await store.dispatch("modal/setShowModal", true);
           }
         }
       }
     }
+  },
+  detectPlayerByColor: async function(color) {
+    const keys = Object.keys(cellColors);
+    for (let i = 0; i < keys.length; i++) {
+      if (color === cellColors[keys[i]]) {
+        return keys[i];
+      }
+    }
+    return null;
   },
   goDiagonally: async function(cells, cell, xMove, yMove) {
     let count = 1;

@@ -9,8 +9,8 @@ const getters = {
 };
 
 const actions = {
-  async setWinner({ commit, rootGetters }) {
-    commit("SET_WINNER", rootGetters["turn/turn"]);
+  async setWinner({ commit }, winner) {
+    commit("SET_WINNER", winner);
   }
 };
 
