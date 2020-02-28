@@ -17,18 +17,20 @@ const PlayGroundService = {
     return { cells, availables };
   },
   choose: async function(hIndex) {
-    const firstCellInColumn = await this.getTheFirstEmptyInColumn(hIndex);
-    if (firstCellInColumn) {
-      const turn = store.getters["turn/turn"];
-      await store.dispatch("playground/fill", {
-        hIndex: firstCellInColumn.hIndex,
-        vIndex: firstCellInColumn.vIndex,
-        turn
-      });
-      await store.dispatch("turn/switchTurn");
-      this.updateAvailableCells();
-      WinnerService.detectTheWinner();
+    if (!store.getters["winner/winner"]) {
+      const firstCellInColumn = await this.getTheFirstEmptyInColumn(hIndex);
+      if (firstCellInColumn) {
+        const turn = store.getters["turn/turn"];
+        await store.dispatch("playground/fill", {
+          hIndex: firstCellInColumn.hIndex,
+          vIndex: firstCellInColumn.vIndex,
+          turn
+        });
+        await store.dispatch("turn/switchTurn");
+        this.updateAvailableCells();
+      }
     }
+    WinnerService.detectTheWinner();
   },
   updateAvailableCells: async function() {
     const availableCells = [];
