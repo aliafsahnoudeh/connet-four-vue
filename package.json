@@ -1,7 +1,11 @@
 {
   "name": "connect-four-vue",
   "version": "0.1.0",
-  "private": true,
+  "author": {
+    "name": "Ali Afsahnoudeh",
+    "email": "ali.afsah1988@gmail.com",
+    "url": "http://aliafsah.com"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
