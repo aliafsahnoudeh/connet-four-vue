@@ -5,6 +5,7 @@
       :type="players.PLAYER_A"
       :selectedColor="cellColors.PLAYER_A"
     />
+    <img src="../../assets/reset.png" @click="handleClick" />
     <Player
       name="Player B"
       :type="players.PLAYER_B"
@@ -17,6 +18,7 @@
 import Player from "@/components/Player";
 import players from "@/types/players";
 import cellColors from "../../types/cellColors";
+import ResetService from "../../services/reset.service";
 
 export default {
   name: "Header",
@@ -28,18 +30,15 @@ export default {
       players,
       cellColors
     };
+  },
+  methods: {
+    handleClick() {
+      ResetService.reset();
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-//TODO styles in seprate file
-.header-container {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 50% 50%;
-  img {
-    justify-self: center;
-  }
-}
+@import "./style.scss";
 </style>

@@ -1,0 +1,11 @@
+.header-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 30% 40% 30%;
+    img {
+      justify-self: center;
+      width: 70px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }

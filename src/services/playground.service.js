@@ -18,7 +18,6 @@ const PlayGroundService = {
   },
   choose: async function(hIndex) {
     const firstCellInColumn = await this.getTheFirstEmptyInColumn(hIndex);
-    console.log(JSON.stringify(firstCellInColumn));
     if (firstCellInColumn) {
       const turn = store.getters["turn/turn"];
       await store.dispatch("playground/fill", {

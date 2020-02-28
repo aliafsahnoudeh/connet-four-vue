@@ -37,13 +37,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//TODO styles in seprate file
-.cell-container {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
+@import "./style.scss";
 </style>
