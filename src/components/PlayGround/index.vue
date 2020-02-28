@@ -41,15 +41,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/variables.scss";
-
-.playground-container {
-  margin-top: 3em;
-  display: grid;
-  background-color: $playgroundColor;
-  width: 80%;
-  justify-self: center;
-  justify-items: center;
-  grid-row-gap: 5px;
-}
+@import "./style.scss";
 </style>
