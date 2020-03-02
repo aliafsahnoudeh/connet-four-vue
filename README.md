@@ -1,29 +1,18 @@
 # connect-four-vue
+An implementation of [connect four game](https://en.wikipedia.org/wiki/Connect_Four) with Vue.js, Vuex, Sass
 
-## Project setup
-```
+## Demo
+You can find living version in 
+[https://aliafsah1988.github.io/connet-four-vue/](https://aliafsah1988.github.io/connet-four-vue/) 
+
+## For installing packages
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+## For running the project
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+## For buiding the project
 npm run build
-```
 
-### Run your unit tests
-```
+## For running tests
 npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
